@@ -1,3 +1,31 @@
+html, 
 body {
-  
+  height: 100%;
+}
+
+body {
+  @extend %quicksand-500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $default;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  // паддинг можно определить по малой ширине сетки, в данном случае 30px
+  padding: 0 15px;
+}
+
+a {
+  @extend %quicksand-500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $default;
 }
