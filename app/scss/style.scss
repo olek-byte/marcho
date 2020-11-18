@@ -7,6 +7,7 @@
 .header {
   // отступ от лого
   padding: 40px 0;
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -18,22 +19,26 @@
   &__list {
     display: flex;
   }
-  &__list-item + .menu__list-item {
+
+  &__list-item+.menu__list-item {
     // расстояние между элементами
     padding-left: 35px;
   }
+
   &__list-link {
     padding-bottom: 0 2px 1px;
     @extend %quicksand-400;
     text-transform: uppercase;
     color: $title;
     transition: all 0.3s;
+
     &:hover {
       @extend %quicksand-500;
       color: $accent;
       border-bottom: 1px solid $accent;
     }
   }
+
   &__list-link--active {
     @extend %quicksand-500;
     color: $accent;
@@ -43,12 +48,15 @@
 
 .user-nav {
   display: flex;
+
   &__link {
     position: relative;
   }
-  &__link + .user-nav__link {
+
+  &__link+.user-nav__link {
     padding-left: 25px;
   }
+
   &__num {
     position: absolute;
     top: -9px;
@@ -74,45 +82,56 @@
   display: flex;
   padding: 70px 0 40px;
   border-bottom: 1px solid #ececec;
+
   &__contact {
     max-width: 250px;
     margin-right: 50px;
   }
+
   &__nav {
     max-width: 170px;
     margin-right: 30px;
   }
+
   &__item-form {
     max-width: 470px;
   }
+
   &__logo {
     margin-bottom: 33px;
   }
-  &__address, 
+
+  &__address,
   &__email,
   &__phone {
     display: block;
     margin-bottom: 14px;
   }
+
   &__social-list {
     display: flex;
     align-items: center;
     margin-top: 30px;
   }
-  &__social-item + .footer-top__social-item {
+
+  &__social-item+.footer-top__social-item {
     padding-left: 18px;
   }
+
   &__social-link {
     transition: all 0.3s;
+
     path {
       fill: $default;
     }
+
     &:hover {
       path {
         fill: $accent;
       }
     }
   }
+
   &__title {
     margin-bottom: 40px;
     @extend %roboto-400;
@@ -120,13 +139,16 @@
     line-height: 1;
     color: $title;
   }
+
   &__link {
     display: block;
     margin-bottom: 14px;
   }
+
   &__text {
     margin-bottom: 25px;
   }
+
   &__form-input {
     padding: 12px 10px 12px 15px;
     max-width: 320px;
@@ -134,13 +156,15 @@
     border: none;
     background-color: #fff;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+
     &::placeholder {
       font-size: 16px;
       color: $default;
     }
   }
+
   &__form-btn {
-    
+
     border: none;
     cursor: pointer;
     @extend %btn;
@@ -153,6 +177,7 @@
   align-items: center;
   height: 75px;
   font-size: 12px;
+
   &__accept-img {
     display: inline-block;
     margin-left: 25px;
@@ -163,22 +188,26 @@
 
 
 .top-slider {
-  background-image: url('../images/top-slider-bg.png');
+  background-image: url('../images/decor/top-slider-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $bg;
   padding: 65px 0 45px;
+
   &__container {
     max-width: 1560px;
   }
+
   &__content {
     padding-top: 125px;
     padding-left: 175px;
   }
+
   &__item {
     display: flex !important;
     justify-content: space-between;
   }
+
   &__title {
     max-width: 670px;
     font-size: 58px;
@@ -187,22 +216,27 @@
     @extend %roboto-700;
     margin-bottom: 35px;
   }
+
   &__text {
     max-width: 470px;
     margin-bottom: 55px;
   }
+
   &__link {
     @extend %btn;
     padding: 14px 36px;
   }
+
   .slick-dots {
     display: flex;
     justify-content: center;
     margin-top: -70px;
-    li{
+
+    li {
       padding: 0 5px;
       justify-self: 0;
-      button{
+
+      button {
         padding: 0;
         font-size: 0;
         background-color: transparent;
@@ -211,6 +245,7 @@
         border-radius: 50%;
         border: 1px solid transparent;
         position: relative;
+
         &::before {
           content: '';
           position: absolute;
@@ -223,9 +258,11 @@
           transform: translate(-50%, -50%);
         }
       }
+
       &.slick-active {
         button {
           border-color: $accent;
+
           &::before {
             background-color: $accent;
           }
@@ -235,6 +272,144 @@
     }
   }
 }
+
+
+.categories-info {
+  padding: 120px 0;
+  background-image: url('../images/decor/categories-left-bg.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+
+  &__inner {
+    background-image: url('../images/decor/categories-right-bg.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+  position: relative;
+  &::before,
+  &::after {
+    content:'';
+    position: absolute;
+    z-index: -1;
+  }
+  &::before{
+background-image: url('../images/decor/info-before-bg.svg');
+    top: -40px;
+    left: -45px;
+    width: 120px;
+    height: 121px;
+  }
+  &::after{
+    background-image: url('../images/decor/info-after-bg.svg');
+    bottom: -23px;
+    right: -23px;
+    width: 65px;
+    height: 52px;
+  }
+
+  &__item {
+ 
+    background-color: #fff;
+ 
+    max-width: 370px;
+    padding: 60px 30px;
+    box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+  }
+
+  &__item-title {
+    margin: 35px 0 10px;
+    color: $title;
+    font-size: 22px;
+    @extend %roboto-400;
+  }
+}
+
+.categories {
+  &__items {
+    display: grid;
+    min-height: 635px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 35px;
+    padding-left: 40px;
+
+    &:nth-child(1) {
+      grid-row: span 2;
+
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #5800e4;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: $accent;
+      }
+    }
+
+    &:nth-child(3) {
+
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #ffba3f;
+      }
+    }
+
+    &:nth-child(4) {
+
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #57c9fd;
+      }
+    }
+  }
+
+  &__item-subtitle {
+
+    margin-bottom: 5px;
+  }
+
+  &__item-title {
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    color: $title;
+    @extend %roboto-400;
+    transition: all .3s;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
