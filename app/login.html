@@ -55,30 +55,64 @@
     </div>
   </header>
 
-<main class="main">
-  <!-- http://localhost:3002/page.html -->
-<section class="top">
-  <div class="top__container" style="background-image: url('images/top-bg.jpg');">
-    <h2 class="top__title title">
-      Log in
-    </h2>
-    <div class="breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">
-            Home
-          </a>
-        </li>
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">
-            Log in
-          </a>
-        </li>
-      </ul>
-    </div>
+  <main class="main">
+    <!-- http://localhost:3002/page.html -->
+    <section class="top">
+      <div class="top__container" style="background-image: url('images/top-bg.jpg');">
+        <h2 class="top__title title">
+          Log in
+        </h2>
+        <div class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">
+                Log in
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
+
+    <section class="modal">
+      <div class="container">
+
+        <div class="modal__links">
+          <a class="modal__link" href="#">REGISTER</a>
+          <a class="modal__link modal__link--active" href="#">LOGIN</a>
+        </div>
+
+        <form class="modal__form" action="#">
+          <label class="modal__label">
+            Username or email address*
+            <input class="modal__input" type="text" required>
+          </label>
+
+          <label class="modal__label">
+            Password*
+            <input class="modal__input" type="password" required>
+          </label>
+
+          <label>
+            Remember me
+            <input type="checkbox">
+          </label>
+          <button class="modal__btn" type="submit">Log in</button>
+          <a class="modal__error" href="#">Lost your password?</a>
+        </form>
+
+
+
+
+
+      </div>
+    </section>
 
 
 
@@ -96,9 +130,7 @@
 
 
 
-
-
-</main>
+  </main>
 
   <footer class="footer">
     <div class="container">
