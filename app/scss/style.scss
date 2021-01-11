@@ -854,6 +854,7 @@
     border: none;
     background-color: #fff;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+    margin-right: 4px;
 
     &::placeholder {
       font-size: 16px;
@@ -2143,25 +2144,27 @@
     margin-bottom: 10px;
   }
 
-  &__form-title{
+  &__form-title {
     text-transform: uppercase;
     margin: 35px 0 25px;
     color: $title;
     font-size: 24px;
-     @extend %roboto-700;
+    @extend %roboto-700;
   }
-  .comments-form{
+
+  .comments-form {
     border-bottom: none;
   }
 
-  &__box{
+  &__box {
     margin: 25px 0 35px;
     display: flex;
     justify-content: space-between;
   }
+
   &__tags,
-  &__share{
-    span{
+  &__share {
+    span {
       text-transform: uppercase;
       color: $title;
       @extend %roboto-700;
@@ -2169,33 +2172,37 @@
   }
 
   &__share {
-    a{
+    a {
       margin-right: 12px;
       vertical-align: middle;
-      &:hover{
-        path{
+
+      &:hover {
+        path {
           fill: $accent;
         }
       }
-      path{
+
+      path {
         fill: #7c7c7c;
       }
     }
   }
 
-  &__author{
+  &__author {
     border-bottom: 1px solid #ececec;
     padding-bottom: 40px;
     margin-bottom: 40px;
     display: flex;
   }
-  &__author-img{
+
+  &__author-img {
     width: 140px;
     height: 140px;
     margin-right: 30px;
     object-fit: cover;
   }
-  &__author-name{
+
+  &__author-name {
     margin-bottom: 24px;
     font-size: 22px;
     @extend %roboto-700;
@@ -2204,7 +2211,7 @@
 
 }
 
-.comments-title{
+.comments-title {
   font-size: 24px;
   @extend %roboto-700;
   text-transform: uppercase;
@@ -2213,3 +2220,137 @@
   font-size: 24px;
 }
 
+.map {
+  padding: 120px 0;
+}
+
+#map {
+  width: 100%;
+  height: 450px;
+}
+
+.contact {
+  padding-bottom: 120px;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__info {
+    max-width: 370px;
+    margin-right: 30px;
+
+  }
+
+  &__info-title {
+    font-size: 48px;
+    line-height: 58px;
+    @extend %roboto-700;
+    color: $title;
+    margin-bottom: 20px;
+  }
+
+  &__info-text {
+    margin-bottom: 60px;
+  }
+
+  &__info-item {
+    color: $title;
+    margin-top: 55px;
+    padding-left: 80px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 5px 20px rgba(146, 146, 146, 0.3);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/icons/phone-icon.svg');
+    }
+
+    &--location {
+      &::after {
+        background-image: url('../images/icons/location-icon.svg');
+        width: 14px;
+        left: 23px;
+      }
+    }
+
+    &--email {
+      &::after {
+        background-image: url('../images/icons/mail-icon.svg');
+        width: 18px;
+        left: 22px;
+      }
+    }
+
+
+    span {
+      display: block;
+    }
+  }
+
+  &__info-phone {
+    display: block;
+    color: $title;
+  }
+
+  &__form {
+    width: 100%;
+    padding: 60px 40px;
+    box-shadow: 0 10px 40px rgba(172, 172, 172, 0.3);
+  }
+
+  &__form-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: $title;
+    @extend %roboto-700;
+  }
+
+  &__form-input {
+    width: 100%;
+    display: block;
+    height: 60px;
+    border: none;
+    padding: 0 24px;
+    background-color: #f6f6f6;
+    margin-bottom: 30px;
+  }
+
+  &__form-textarea {
+    width: 100%;
+    display: block;
+    resize: none;
+    height: 200px;
+    border: none;
+    padding: 24px;
+    background-color: #f6f6f6;
+    margin-bottom: 30px;
+  }
+  &__form-box{
+    display: flex;
+    justify-content: space-between;
+    input{
+      width: 330px;
+    }
+  }
+
+  &__form-btn{
+    @extend %btn;
+    border: none;
+  }
+
+}
