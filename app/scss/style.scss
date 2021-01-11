@@ -838,6 +838,10 @@
     color: $title;
   }
 
+  &__form{
+    display: flex;
+  }
+
   &__link {
     display: block;
     margin-bottom: 14px;
