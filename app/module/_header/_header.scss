@@ -1,0 +1,66 @@
+.header {
+  padding: 40px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__list-item+.menu__list-item {
+    padding-left: 35px;
+  }
+
+  &__list-link {
+    padding-bottom: 0 2px 1px;
+    @extend %quicksand-400;
+    text-transform: uppercase;
+    color: $title;
+    transition: all 0.3s;
+
+    &:hover {
+      @extend %quicksand-500;
+      color: $accent;
+      border-bottom: 1px solid $accent;
+    }
+  }
+
+  &__list-link--active {
+    @extend %quicksand-500;
+    color: $accent;
+    border-bottom: 1px solid $accent;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+  }
+
+  &__link+.user-nav__link {
+    padding-left: 25px;
+  }
+
+  &__num {
+    position: absolute;
+    top: -9px;
+    right: -14px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    // центрирование в круге (высота+выравнивание по центру
+    line-height: 1.6;
+    text-align: center;
+    color: #fff;
+    background-color: $accent;
+    border-radius: 50%;
+  }
+}
