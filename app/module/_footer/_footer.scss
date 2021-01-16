@@ -7,6 +7,7 @@
   padding: 70px 0 40px;
   border-bottom: 1px solid #ececec;
 
+
   &__contact {
     max-width: 250px;
     margin-right: 50px;
@@ -38,8 +39,10 @@
     margin-top: 30px;
   }
 
-  &__social-item+.footer-top__social-item {
-    padding-left: 18px;
+  &__social-item {
+    &:not(:first-child) {
+      padding-left: 18px;
+    }
   }
 
   &__social-link {
@@ -62,6 +65,8 @@
     font-size: 22px;
     line-height: 1;
     color: $title;
+
+    pointer-events: none; //чтобы при клике не открывался список
   }
 
   &__form {
@@ -93,24 +98,138 @@
   }
 
   &__form-btn {
-
     border: none;
     cursor: pointer;
     @extend %btn;
   }
 }
 
-
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  min-height: 75px;
   font-size: 12px;
+  flex-wrap: wrap;
 
   &__accept-img {
     display: inline-block;
     margin-left: 25px;
     vertical-align: middle;
   }
+}
+
+@media (max-width: 1130px) {
+  .footer-top {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__contact {
+      margin-right: 0;
+    }
+
+    &__nav {
+      margin-right: 0;
+    }
+
+    &__item-form {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .footer-top {
+
+    &__contact {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .footer-top {
+    &__nav {
+      margin-right: 15px;
+    }
+  }
+
+  .footer-bottom {
+    justify-content: center;
+
+    &__copy {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+
+    &__nav {
+      margin-top: 30px;
+      margin-right: 0;
+      max-width: 100%;
+    }
+
+
+    &__title {
+      width: 100%;
+      pointer-events: auto; //восстанавливает стандартное взаимодействие указателя с элементом(до брейкпоинтов ставим значение: none;)
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 13px;
+        top: 0;
+        background-image: url('../images/icons/angle-left-solid.svg');
+        background-repeat: no-repeat;
+        width: 7px;
+        height: 17px;
+        transform: rotate(-90deg);
+      }
+
+      &.footer-top__title--active {
+        //создание нового класса в JS
+        &::before {
+          transform: rotate(90deg); //при клике треугольник поварачивается
+        }
+      }
+    }
+
+    &__list {
+      display: none; //прячем список и текст
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__form {
+      flex-wrap: wrap;
+    }
+
+    &__form-input {
+      max-width: 100%;
+      margin-right: 0;
+    }
+
+    &__form-btn {
+      width: 100%;
+    }
+
+    .footer-bottom {
+      &__accept-img {
+        margin-left: 15px;
+      }
+    }
+  }
+
 }
